@@ -3,13 +3,10 @@ import styled, { keyframes } from "styled-components";
 export const ContainerExterno = styled.body`
   display: flex;
   flex-direction: column;
-  margin: 0 "auto";
-  padding: 1rem;
   justify-content: center;
   align-content: stretch;
   text-align: center;
   align-items: stretch;
-  height: 100%;
 
   @media (max-width: 600px) {
   }
@@ -49,7 +46,6 @@ export const Title = styled.header`
     0 0 82px #be1c1c, 0 0 92px #be1c1c, 0 0 102px #be1c1c, 0 0 151px #be1c1c;
 
   @media (max-width: 600px) {    
-  margin-top: 500px;
   }
 `;
 

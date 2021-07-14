@@ -1,42 +1,17 @@
 import styled, { keyframes } from "styled-components";
 
-export const Container = styled.div`
-  width: 90vw;
-  max-width: 1600px;
-  height: 100vh;
-  margin: 1rem "auto";
+export const ContainerExterno = styled.body`
+  display: flex;
+  flex-direction: column;
+  margin: 0 "auto";
   padding: 1rem;
-  display: grid;
+  justify-content: center;
+  align-content: stretch;
   text-align: center;
-  justify-content: space-between;
-  justify-items: center;
-  align-items: start;
-  background-size: cover;
-  background-repeat: no-repeat;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas:
-    "header header header header"
-    "image image  desc desc"
-    "image image  desc2 desc2"
-    "image image  sign sign"
-    "image image email emailbtn";
+  align-items: stretch;
+  height: 100%;
 
   @media (max-width: 600px) {
-    width: 90vw;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: 1;
-    grid-template-rows: 7;
-    grid-template-areas:
-    "header"
-    "image"
-    "desc"
-    "desc2"
-    "sign"
-    "email" 
-    "emailbtn";
   }
 `;
 
@@ -60,23 +35,36 @@ text-shadow: none;
 }   
 `;
 
-export const Title = styled.h1`
-    grid-area: header;
-    align-self: end;
-    animation-name: ${flicker};
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    font-size: 4rem;
-    color: #ddd;
-    text-shadow:
-    0 0 7px #ddd,
-    0 0 10px #ddd,
-    0 0 21px #ddd,
-    0 0 42px #BE1C1C,
-    0 0 82px #BE1C1C,
-    0 0 92px #BE1C1C,
-    0 0 102px #BE1C1C,
-    0 0 151px #BE1C1C;
+export const Title = styled.header`
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  animation-name: ${flicker};
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ddd;
+  text-shadow: 0 0 7px #ddd, 0 0 10px #ddd, 0 0 21px #ddd, 0 0 42px #be1c1c,
+    0 0 82px #be1c1c, 0 0 92px #be1c1c, 0 0 102px #be1c1c, 0 0 151px #be1c1c;
+
+  @media (max-width: 600px) {    
+  margin-top: 500px;
+  }
+`;
+
+export const Container = styled.main`
+  width: 90vw;
+  max-width: 1600px;
+  margin: 0 "auto";
+  padding: 1rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const flicker2 = keyframes`
@@ -99,10 +87,22 @@ text-shadow: none;
 }   
 `;
 
+export const Child = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Child2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Cadrastro = styled.h2`
     justify-self: center;
-    align-self: end;
-    grid-area: sign;
+    align-self: center;
     animation-name: ${flicker2};
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -122,18 +122,18 @@ export const Cadrastro = styled.h2`
 `;
 
 export const Desc = styled.h3`
+  display: flex;
   justify-self: center;
-  align-self: end;
-  grid-area: desc;
+  align-self: center;
   font-size: 2.5rem;
   font-weight: 800;
   color: #eee;
 `;
 
 export const Desc2 = styled.h4`
-  justify-self: start;
+  display: flex;
+  justify-self: center;
   align-self: center;
-  grid-area: desc2;
   font-size: 1.6rem;
   font-weight: 600;
   color: #ddd;
@@ -141,26 +141,33 @@ export const Desc2 = styled.h4`
 
 export const Image = styled.img`
   display: flex;
-  align-self: center;
-  grid-area: image;
-  width: 95%;
+  width: 90%;
   @media (max-width: 600px) {
-    width: 95%;
+    width: 90%;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2rem;
+  justify-items: stretch;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
   }
 `;
 
 export const Input = styled.input`
-  width: 95%;
-  justify-self: left;
-  align-self: start;
-  margin: 1px "auto";
+  margin-right: "auto";
   color: #000;
   font-size: 1.3rem;
   font-weight: bold;
   font-family: -sans-serif;
   border: none;
-  border-radius: 0.5rem;
-  grid-area: email;
+  border-radius: 0.5rem 0 0 0.5rem;
   padding: 0.4rem;
 
   &:focus {
@@ -170,57 +177,45 @@ export const Input = styled.input`
     outline: none;
   }
   @media (max-width: 600px) {
-    width: 90vw;
-    justify-self: center;
-    align-self: center;
+    width: 100%;
+    border-radius: 0;
+    justify-self: stretch;
+    align-self: stretch;
   }
 `;
 
 export const Btn = styled.button`
-  width: 80%;
-  background-color: #BE1C1C;
+  margin-left: "auto";
+  background-color: #be1c1c;
   color: #eee;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: bold;
   font-family: -sans-serif;
-  justify-self: left;
-  align-self: start;
   border: none;
-  border-radius: 0.5rem;
-  margin: 1px "auto";
-  grid-area: emailbtn;
+  border-radius: 0 0.5rem 0.5rem 0;
   padding: 0.4rem;
   &:hover {
-      cursor: pointer;
+    cursor: pointer;
   }
   @media (max-width: 600px) {
     margin-top: 5px;
-    width: 94vw;
-    justify-self: center;
-    align-self: center;
+    border-radius: 0;
+    width: 100%;
+    justify-self: stretch;
+    align-self: stretch;
   }
 `;
 
 export const Obrigado = styled.h5`
-    justify-self: center;
-    align-self: start;
-    grid-area: sign;
-    animation-name: ${flicker2};
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    font-size: 3.5rem;
-    font-weight: 600;
-    color: #ccc;
-    text-shadow:
-    0 0 7px #ccc,
-    0 0 10px #ccc,
-    0 0 21px #ccc,
-    0 0 42px #BE1C1C,
-    0 0 82px #BE1C1C,
-    0 0 92px #BE1C1C,
-    0 0 102px #BE1C1C,
-    0 0 151px #BE1C1C;
-    @media (max-width: 600px) {
-    grid-area: desc2;  
-}
+  display: flex;
+  justify-self: center;
+  align-self: start;
+  animation-name: ${flicker2};
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ccc;
+  text-shadow: 0 0 7px #ccc, 0 0 10px #ccc, 0 0 21px #ccc, 0 0 42px #be1c1c,
+    0 0 82px #be1c1c, 0 0 92px #be1c1c, 0 0 102px #be1c1c, 0 0 151px #be1c1c;
 `;

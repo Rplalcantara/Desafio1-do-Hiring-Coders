@@ -32,10 +32,16 @@ function App() {
   }
 
   return (
-    <>
+    /* BODY */
+    <S.ContainerExterno>
+      {/* HEADER */}
+      <S.Title>BLACK FRIDAY LOJINHA DA TIA</S.Title>
+      {/* MAIN */}
       <S.Container>
-        <S.Title>MEGA DESCONTOS BLACK FRIDAY</S.Title>
-        <S.Image src="blackfriday3.png" alt="PlaceholderIMG"></S.Image>
+        <S.Child>
+        <S.Image src="blackfriday.png" alt="PlaceholderIMG"></S.Image>
+        </S.Child>
+        <S.Child2>
         <S.Desc>Toda loja com até 80% de desconto!</S.Desc>
 
         {cadastrado ? 
@@ -46,6 +52,7 @@ function App() {
         <S.Desc2>
           Faça seu cadastro e receba todas ofertas direto em seu e-mail!
         </S.Desc2>
+        <S.Wrapper>
         <S.Input
           type="text"
           placeholder="E-mail"
@@ -58,9 +65,12 @@ function App() {
           }}
         ></S.Input>
         <S.Btn onClick={(e) => validateEmail(email)}>Cadastre-se!</S.Btn>
+        </S.Wrapper>
         </>}
+        </S.Child2>
       </S.Container>
-    </>
+    </S.ContainerExterno>
+    /* FIM DO BODY */
   );
 }
 

@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import * as S from "./style";
 
-/* emailSaved = localStorage.getItem("savedEmails")
-emailSaved = JSON.parse(emailSaved) */
-
 function App() {
-  const history = useHistory();
   const [email, setEmail] = useState("");
   const [cadastrado, setCadastrado] = useState(false);
   let emailSavedDB = []
@@ -20,7 +15,7 @@ function App() {
 
   function validateEmail(mail) 
 {
- if (email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
+ if (mail.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
   {
     saveEmail()
     return (true)

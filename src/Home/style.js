@@ -4,9 +4,10 @@ export const ContainerExterno = styled.body`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: stretch;
+  align-content: center;
   text-align: center;
-  align-items: stretch;
+  flex-wrap: nowrap;
+  width: 90vw;
 
   @media (max-width: 600px) {
   }
@@ -36,6 +37,7 @@ export const Title = styled.header`
   display: flex;
   justify-self: center;
   align-self: center;
+  margin-top: 2rem;
   animation-name: ${flicker};
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -45,11 +47,11 @@ export const Title = styled.header`
   text-shadow: 0 0 7px #ddd, 0 0 10px #ddd, 0 0 21px #ddd, 0 0 42px #be1c1c,
     0 0 82px #be1c1c, 0 0 92px #be1c1c, 0 0 102px #be1c1c, 0 0 151px #be1c1c;
 
-  @media (max-width: 600px) {    
+  @media (max-width: 600px) {
   }
 `;
 
-export const Container = styled.main`
+export const Container1 = styled.div`
   width: 90vw;
   max-width: 1600px;
   margin: 0 "auto";
@@ -214,4 +216,53 @@ export const Obrigado = styled.h5`
   color: #ccc;
   text-shadow: 0 0 7px #ccc, 0 0 10px #ccc, 0 0 21px #ccc, 0 0 42px #be1c1c,
     0 0 82px #be1c1c, 0 0 92px #be1c1c, 0 0 102px #be1c1c, 0 0 151px #be1c1c;
+`;
+
+export const Container2 = styled.div`
+  width: 90vw;
+  max-width: 1600px;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-self: center;
+  justify-content: space-around;
+
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+`;
+
+export const SecondChild = styled.div`
+  display: grid;
+  align-items: stretch;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-grow: 1;
+  grid-template-columns: repeat(4 1fr);
+  font-size: 1.5rem;
+`;
+
+export const TopText = styled.div`
+  width: 70%;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 600;
+  justify-self: center;
+  background-color: #991e1e;
+`;
+
+export const CenterImg = styled.img`
+  justify-self: center;
+  width: 70%;
+`;
+
+export const BotText = styled.div`
+  width: 70%;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 800;
+  justify-self: center;
+  background-color: #991e1e;
 `;

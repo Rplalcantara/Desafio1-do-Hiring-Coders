@@ -137,9 +137,27 @@ export const Desc2 = styled.h4`
   color: #ddd;
 `;
 
+const updown = keyframes`
+  0% {top: 0px;}
+  10% {top: 4px;}
+  20% {top: 8px;}
+  30% {top: 12px;}
+  40% {top: 16px;}
+  50% {top: 20px;}
+  60% {top: 16px;}
+  70% {top: 12px;}
+  80% {top: 8px;}
+  90% {top: 4px;}
+  100% {top: 0px;}
+`;
+
 export const Image = styled.img`
   display: flex;
   width: 90%;
+  position: relative;
+  animation-name: ${updown};
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
   @media (max-width: 600px) {
     width: 90%;
   }

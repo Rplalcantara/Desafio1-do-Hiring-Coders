@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const ContainerExterno = styled.body`
   display: flex;
@@ -8,6 +9,8 @@ export const ContainerExterno = styled.body`
   text-align: center;
   flex-wrap: nowrap;
   width: 90vw;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
 
   @media (max-width: 600px) {
   }
@@ -33,10 +36,44 @@ text-shadow: none;
 }   
 `;
 
+export const ContainerHeader = styled.div`
+  width: 90vw;
+  max-width: 1600px;
+  padding: 1rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const MenuContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 10%);
+  justify-content: right;
+  align-content: end;
+  
+  @media (max-width: 600px) {
+    margin-top: 2rem;
+    justify-content: center;
+    align-content: end;
+    grid-template-columns: repeat(3, 25%);
+  }
+`;
+
+export const MenuItem = styled.h1`
+  color: #ddd;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+`;
+
 export const Title = styled.header`
   display: flex;
   justify-self: center;
-  align-self: center;
+  align-self: start;
   margin-top: 2rem;
   animation-name: ${flicker};
   animation-duration: 5s;
@@ -238,14 +275,12 @@ export const Obrigado = styled.h5`
 
 export const Container2 = styled.div`
   width: 90vw;
+  height: 50vh;
   max-width: 1600px;
   margin-top: 10rem;
   margin-bottom: 10rem;
-  text-align: center;
   display: flex;
   flex-wrap: nowrap;
-  justify-self: center;
-  justify-content: space-around;
 
   @media (max-width: 600px) {
     flex-wrap: wrap;
@@ -254,16 +289,29 @@ export const Container2 = styled.div`
 
 export const SecondChild = styled.div`
   display: grid;
-  align-items: stretch;
+  height: 90%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-left: 2.3rem;
+  margin-right: 2.3rem;
   flex-grow: 1;
-  grid-template-columns: repeat(4 1fr);
   font-size: 1.5rem;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  @media (max-width: 600px) {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
 `;
 
+export const Bonkai = styled(Link)`
+    text-decoration: none; 
+`
+
 export const TopText = styled.div`
-  width: 70%;
+  width: 100%;
   color: #000;
   font-size: 2rem;
   font-weight: 600;
@@ -273,14 +321,65 @@ export const TopText = styled.div`
 
 export const CenterImg = styled.img`
   justify-self: center;
-  width: 70%;
+  width: 100%;
+  vertical-align: middle;
 `;
 
 export const BotText = styled.div`
-  width: 70%;
+  width: 100%;
   color: #000;
   font-size: 1.5rem;
   font-weight: 800;
   justify-self: center;
   background-color: #991e1e;
+  margin-bottom: 5px;
 `;
+
+export const Foot = styled.footer`
+  color: #fff;
+  width: 100%;
+  font-size: 0.7rem;
+  display: inline-block;
+  text-align: center; 
+  @media (max-width: 600px) {
+    margin-top: 100rem;
+  }
+`;
+
+export const IconBox = styled.div`
+  width: 100%;
+  min-height: 2rem;  
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const icond3 = keyframes`
+  0% {
+    text-shadow: 5px 4px #be1c1c, -5px -6px #000AA9;
+  }
+  25% {
+    text-shadow: -5px -6px $#be1c1c, 5px 4px #000AA9;
+  }
+  50% {
+    text-shadow: 5px -4px $#be1c1c, -8px 4px #000AA9;
+  }
+  75% {
+    text-shadow: -8px -4px $#be1c1c, -5px -4px #000AA9;
+  }
+  100% {
+    text-shadow: -5px 0 $#be1c1c, 5px -4px #000AA9;
+  }
+`;
+
+export const Icon3d = styled.i`
+  padding: 10px;
+  animation-name: ${icond3} 200ms 10;
+  color: #fff;
+  &:hover {
+    -webkit-animation: ${icond3} 200ms infinite;
+          animation: ${icond3} 200ms infinite;
+  }
+`;
+

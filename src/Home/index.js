@@ -4,9 +4,9 @@ import * as S from "./style";
 function App() {
   const [email, setEmail] = useState("");
   const [cadastrado, setCadastrado] = useState(false);
-  
-  let checklocal = JSON.parse(localStorage.getItem("savedEmails"))
-  let emailSavedDB = checklocal === null ? []:checklocal;
+
+  let checklocal = JSON.parse(localStorage.getItem("savedEmails"));
+  let emailSavedDB = checklocal === null ? [] : checklocal;
 
   function validateEmail(mail) {
     if (
@@ -14,7 +14,7 @@ function App() {
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
       )
     ) {
-      alreadyExists(email, emailSavedDB)
+      alreadyExists(email, emailSavedDB);
       return true;
     }
     alert("Por favor insira um e-mail válido!");
@@ -22,7 +22,9 @@ function App() {
   }
 
   function alreadyExists(value, array) {
-    array.includes(value) ? alert("Email já cadastrado. Tente novamente.") : saveEmail()
+    array.includes(value)
+      ? alert("Email já cadastrado. Tente novamente.")
+      : saveEmail();
   }
 
   function saveEmail() {
@@ -37,18 +39,14 @@ function App() {
       <S.ContainerExterno>
         {/* HEADER */}
         <S.ContainerHeader>
-        <S.Title>DKCorp</S.Title>
-        <S.MenuContainer>
-          <S.Bonkai to="/">
-            <S.MenuItem>Home</S.MenuItem>
-          </S.Bonkai>
-          <S.Bonkai to="/">
-          <S.MenuItem>Sobre</S.MenuItem>
-          </S.Bonkai>
-          <S.Bonkai to="/">
-          <S.MenuItem>Contatos</S.MenuItem>
-          </S.Bonkai>
-        </S.MenuContainer>
+          <S.Title>DKCorp</S.Title>
+          <S.MenuContainer>
+            <S.MenuItem to="/">Home</S.MenuItem>
+
+            <S.MenuItem to="/">Sobre</S.MenuItem>
+
+            <S.MenuItem to="/">Contatos</S.MenuItem>
+          </S.MenuContainer>
         </S.ContainerHeader>
         {/* MAIN */}
         {/* FIRST PART */}
@@ -128,7 +126,10 @@ function App() {
       {/* FOOTER */}
       <S.Foot>
         <S.IconBox>
-          <S.Bonkai to={{ pathname: "https://github.com/Rplalcantara" }} target="_blank">
+          <S.Bonkai
+            to={{ pathname: "https://github.com/Rplalcantara" }}
+            target="_blank"
+          >
             <S.Icon3d className="fa fa-github fa-3x"></S.Icon3d>
           </S.Bonkai>
           <S.Bonkai to="/">

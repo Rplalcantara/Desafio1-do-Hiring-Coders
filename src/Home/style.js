@@ -47,24 +47,22 @@ export const ContainerHeader = styled.div`
 `;
 
 export const MenuContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 10%);
-  justify-content: right;
-  align-content: end;
+  display: flex;
+  align-items: center;
+  justify-self: right;
   
   @media (max-width: 600px) {
     margin-top: 2rem;
-    justify-content: center;
-    align-content: end;
-    grid-template-columns: repeat(3, 25%);
+    justify-self: center;
   }
 `;
 
-export const MenuItem = styled.h1`
+export const MenuItem = styled(Link)`
   color: #ddd;
   font-size: 1.5rem;
-  margin: 0;
+  margin: 0.5rem;
   padding: 0;
+  text-decoration: none;
 `;
 
 export const Title = styled.header`

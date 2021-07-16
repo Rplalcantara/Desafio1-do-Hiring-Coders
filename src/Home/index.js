@@ -4,14 +4,9 @@ import * as S from "./style";
 function App() {
   const [email, setEmail] = useState("");
   const [cadastrado, setCadastrado] = useState(false);
-  let emailSavedDB = [];
-
-  if (localStorage.getItem("savedEmails") === null) {
-    emailSavedDB = [];
-  } else {
-    emailSavedDB = localStorage.getItem("savedEmails");
-    emailSavedDB = JSON.parse(emailSavedDB);
-  }
+  
+  let checklocal = JSON.parse(localStorage.getItem("savedEmails"))
+  let emailSavedDB = checklocal === null ? []:checklocal;
 
   function validateEmail(mail) {
     if (
@@ -19,16 +14,19 @@ function App() {
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
       )
     ) {
-      saveEmail();
+      alreadyExists(email, emailSavedDB)
       return true;
     }
     alert("Por favor insira um e-mail válido!");
     return false;
   }
 
+  function alreadyExists(value, array) {
+    array.includes(value) ? alert("Email já cadastrado. Tente novamente.") : saveEmail()
+  }
+
   function saveEmail() {
-    const emailSaved = email;
-    emailSavedDB.push(emailSaved);
+    emailSavedDB.push(email);
     localStorage.setItem("savedEmails", JSON.stringify(emailSavedDB));
     setCadastrado(true);
   }

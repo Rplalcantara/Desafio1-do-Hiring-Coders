@@ -11,9 +11,6 @@ export const ContainerExterno = styled.body`
   width: 90vw;
   margin-bottom: 50px;
   padding-bottom: 50px;
-
-  @media (max-width: 600px) {
-  }
 `;
 
 const flicker = keyframes`
@@ -83,9 +80,6 @@ export const Title = styled.header`
   color: #ddd;
   text-shadow: 0 0 7px #ddd, 0 0 10px #ddd, 0 0 21px #ddd, 0 0 42px #be1c1c,
     0 0 82px #be1c1c, 0 0 92px #be1c1c, 0 0 102px #be1c1c, 0 0 151px #be1c1c;
-
-  @media (max-width: 600px) {
-  }
 `;
 
 export const Container1 = styled.div`
@@ -277,13 +271,13 @@ export const Container2 = styled.div`
   width: 90vw;
   height: 50vh;
   max-width: 1600px;
-  margin-top: 10rem;
-  margin-bottom: 10rem;
   display: flex;
   flex-wrap: nowrap;
 
   @media (max-width: 600px) {
-    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
   }
 `;
 
@@ -294,15 +288,10 @@ export const SecondChild = styled.div`
   margin-bottom: 0.5rem;
   margin-left: 2.3rem;
   margin-right: 2.3rem;
-  flex-grow: 1;
   font-size: 1.5rem;
   
   &:hover {
     transform: scale(1.05);
-  }
-  @media (max-width: 600px) {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
   }
 `;
 
@@ -340,10 +329,7 @@ export const Foot = styled.footer`
   width: 100%;
   font-size: 0.7rem;
   display: inline-block;
-  text-align: center; 
-  @media (max-width: 600px) {
-    margin-top: 100rem;
-  }
+  text-align: center;
 `;
 
 export const IconBox = styled.div`

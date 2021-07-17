@@ -61,7 +61,7 @@ function App() {
               <S.Obrigado>Obrigado por se cadastrar!</S.Obrigado>
             ) : (
               <>
-                <S.Cadrastro>CADRASTRE-SE JÁ!</S.Cadrastro>
+                <S.Cadrastro>CADASTRE-SE JÁ!</S.Cadrastro>
                 <S.Desc2>
                   Faça seu cadastro e receba todas ofertas direto em seu e-mail!
                 </S.Desc2>
